@@ -6,7 +6,7 @@ SED=$(which sed);
 # memory optimizer for smartfox server
 #
 
-SMARTFOX_CONTROL_SCRIPT="${OPENSHIFT_SFS_DIR}/versions/multiversion/SFS2X/config/server.xml";
+SMARTFOX_CONTROL_SCRIPT="${OPENSHIFT_SFS_DIR}/versions/SmartFoxServer_2X/SFS2X/config/server.xml";
 
 [ -z "$XMS" ] && { XMS=32; }
 memory_total=`free -m | grep Mem | awk '{print $2}'`;
