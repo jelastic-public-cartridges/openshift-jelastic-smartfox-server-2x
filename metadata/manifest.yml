@@ -44,6 +44,9 @@ Cart-Data:
 Provides:
   - "smartfox"
 Endpoints:
+  - Private-IP-Name:   WEB_HOST
+    Private-Port-Name: WEB_PORT
+    Private-Port:      8080
   - Private-IP-Name:   DB_HOST
     Private-Port-Name: DB_PORT
     Private-Port:      9933
