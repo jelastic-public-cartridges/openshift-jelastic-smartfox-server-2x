@@ -16,4 +16,6 @@ sh SFS2X_installer.sh | tee /tmp/SFS2X_installation.log;
 
 ##################    Jelastic patch   ##################
 [ -d "/opt/SmartFoxServer_2X" ] && mv /opt/SmartFoxServer_2X /opt/repo/versions/2.x
+sed "s/127.0.0.1/<%= ENV['OPENSHIFT_SFS_IP'] %>/g"  /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml > /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml.erb
+erb  /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml.erb > /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml
 #########################################################
