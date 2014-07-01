@@ -10,6 +10,6 @@
 # Short-Description: sfs2x-service
 ### END INIT INFO
 
-SFX_SERVICE="/opt/repo/versions/2X/SFS2X/sfs2x-service";
+SFX_SERVICE="/opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/sfs2x-service";
 
 $SFX_SERVICE $1;
