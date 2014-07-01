@@ -1,0 +1,15 @@
+#!/bin/sh
+# chkconfig:         2345 75 15
+# description:       sfs2x-service
+### BEGIN INIT INFO
+# Provides:          sfs2x-service
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: sfs2x-service
+### END INIT INFO
+
+SFX_SERVICE="/opt/repo/versions/2X/SFS2X/sfs2x-service";
+
+$SFX_SERVICE $1;

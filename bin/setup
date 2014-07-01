@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Download and execute script to install SmartFoxServer 2X
+cd /tmp;
+wget http://www.smartfoxserver.com/downloads/sfs2x/scripts/internap/SFS2X_installer.sh;
+
+##################    Jelastic patch   ##################
+[ ! -f "/tmp/SFS2X_installer.sh"  ] && exit 1;
+sed -i '/apt-get/d' /tmp/SFS2X_installer.sh;
+sed -i '/S99sfs2X/d' /tmp/SFS2X_installer.sh;
+sed -i '/SFS2X_IP_configuration.py/d' /tmp/SFS2X_installer.sh;
+#sed -i 's/\/opt\/SmartFoxServer_2X\/SFS2X/\/opt\/repo\/versions\/multiverse\/SmartFoxServer_2X\/SFS2X/g' /tmp/SFS2X_installer.sh;
+#########################################################
+
+sh SFS2X_installer.sh | tee /tmp/SFS2X_installation.log;
+
+##################    Jelastic patch   ##################
+[ -d "/opt/SmartFoxServer_2X" ] && mv /opt/SmartFoxServer_2X /opt/repo/versions/2X
+sed 's/127.0.0.1/<%= ENV['J_OPENSHIFT_SFS_IP'] %>/g'  /opt/repo/versions/2X/SFS2X/config/server.xml > /opt/repo/versions/2X/SFS2X/server.xml.erb
+erb  /opt/repo/versions/2X/SFS2X/server.xml.erb > /opt/repo/versions/2X/SFS2X/config/server.xml
+#########################################################
