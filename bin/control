@@ -12,7 +12,7 @@
 
 SFX_SERVICE="/opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/sfs2x-service";
 
-sed 's/127.0.0.1/<%= ENV['J_OPENSHIFT_SFS_IP'] %>/g'  /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml > /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml.erb
+sed "s/127.0.0.1/<%= ENV['J_OPENSHIFT_SFS_IP'] %>/g"  /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml > /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml.erb
 erb  /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml.erb > /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml
 
 $SFX_SERVICE $1;
