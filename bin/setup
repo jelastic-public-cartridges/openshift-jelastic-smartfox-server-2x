@@ -20,5 +20,5 @@ sed "s/127.0.0.1/<%= ENV['OPENSHIFT_SFS_IP'] %>/g"  /opt/repo/versions/2.x/Smart
 sed -i 's/<adminTcpPort>[0-9]*<\/adminTcpPort>/<adminTcpPort>-1<\/adminTcpPort>/g' /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml.erb
 erb  /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml.erb > /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml
 [ -d "/opt/repo/logs" ] && rmdir /opt/repo/logs
-ln -s /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/logs/ opt/repo/logs
+ln -s /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/logs/ /opt/repo/logs
 #########################################################
