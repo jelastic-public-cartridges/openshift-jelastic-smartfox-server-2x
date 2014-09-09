@@ -5,7 +5,6 @@ This cartridge provides [SmartFoxServer](http://smartfoxserver.com/) on Jelastic
 
 It was designed with simplicity in mind, allowing developers to quickly create any type of multiplayer interactions, from basic chat applications to complex real-time games and MMOs. SmartFoxServer comes with a rich set of features, one of the best sets of documentations with many source examples, powerful administration tools and an active online support forum.
 
-
 Follow the [link](http://ops-docs.jelastic.com/private-add-cartridge) in order to find out how to enable the current cartridge at Jelastic dashboard.
 
 ### What Jelastic cartridge is?
