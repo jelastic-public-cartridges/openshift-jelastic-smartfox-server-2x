@@ -1,4 +1,4 @@
-# Jelastic NodeJS Cartridge
+# Jelastic SmartFoxServer Cartridge
 This cartridge provides [SmartFoxServer](http://smartfoxserver.com/) on Jelastic Platform.
 
 **SmartFoxServer** is a comprehensive platform for rapid development of multi-user applications and games with Adobe Flash/Flex/Air, Unity, HTML5, iOS, Windows Phone 8, Android, Java, Windows 8, C++ and more.
