@@ -51,6 +51,10 @@ Endpoints:
     Private-Port-Name: DB_PORT
     Private-Port:      9933
     Public-Port-Name:  DB_PROXY_PORT
+  - Private-IP-Name:   AJP_HOST
+    Private-Port-Name: AJP_PORT
+    Private-Port:      8009
+    Public-Port-Name:  AJP_PROXY_PORT
 Publishes:
   publish-db-connection-info:
     Type: "ENV:NET_TCP:db:connection-info"

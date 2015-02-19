@@ -22,3 +22,7 @@ erb  /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml.erb > /opt
 [ -d "/opt/repo/logs" ] && rmdir /opt/repo/logs
 ln -s /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/logs/ /opt/repo/logs
 #########################################################
+
+cp -f /opt/repo/sfs2x-service /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/sfs2x-service;
+cp -f /opt/repo/variables.conf /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/variables.conf;
+cp -f /opt/repo/variablesparser.sh /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/variablesparser.sh;
