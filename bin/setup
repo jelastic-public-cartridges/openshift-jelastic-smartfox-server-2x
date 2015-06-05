@@ -1,7 +1,5 @@
 #!/bin/bash
 
-chmod a+x /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/variablesparser.sh;
-
 # Download and execute script to install SmartFoxServer 2X
 cd /tmp;
 wget http://www.smartfoxserver.com/downloads/sfs2x/scripts/jelastic/SFS2X_installer.sh;
