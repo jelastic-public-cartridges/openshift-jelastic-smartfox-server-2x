@@ -5,7 +5,7 @@ Description: "SmartFox."
 Version: '2.x'
 License: GNU GENERAL PUBLIC LICENSE
 License-Url: 
-Vendor: Smartfox
+Vendor: SmartFoxServer
 Cartridge-Version: 0.0.1
 Cartridge-Vendor: smartfox
 Source-Url: https://github.com/jelastic-public-cartridges/openshift-jelastic-smartfox-server-2x.git
