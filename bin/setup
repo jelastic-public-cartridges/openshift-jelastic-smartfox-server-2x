@@ -15,14 +15,14 @@ sed -i '/SFS2X_IP_configuration.py/d' /tmp/SFS2X_installer.sh;
 sh SFS2X_installer.sh | tee /tmp/SFS2X_installation.log;
 
 ##################    Jelastic patch   ##################
-[ -d "/opt/SmartFoxServer_2X" ] && mv /opt/SmartFoxServer_2X /opt/repo/versions/2.x
-sed "s/127.0.0.1/<%= ENV['OPENSHIFT_SFS_IP'] %>/g"  /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml > /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml.erb
-sed -i 's/<adminTcpPort>[0-9]*<\/adminTcpPort>/<adminTcpPort>-1<\/adminTcpPort>/g' /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml.erb
-erb  /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml.erb > /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/server.xml
+[ -d "/opt/SmartFoxServer_2X" ] && mv /opt/SmartFoxServer_2X /opt/repo/versions/2X
+sed "s/127.0.0.1/<%= ENV['OPENSHIFT_SFS_IP'] %>/g"  /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/config/server.xml > /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/config/server.xml.erb
+sed -i 's/<adminTcpPort>[0-9]*<\/adminTcpPort>/<adminTcpPort>-1<\/adminTcpPort>/g' /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/config/server.xml.erb
+erb  /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/config/server.xml.erb > /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/config/server.xml
 [ -d "/opt/repo/logs" ] && rmdir /opt/repo/logs
-ln -s /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/logs/ /opt/repo/logs
+ln -s /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/logs/ /opt/repo/logs
 #########################################################
 
-cp -f /opt/repo/sfs2x-service /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/sfs2x-service;
-cp -f /opt/repo/variables.conf /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/variables.conf;
-cp -f /opt/repo/variablesparser.sh /opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/variablesparser.sh;
+cp -f /opt/repo/sfs2x-service /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/sfs2x-service;
+cp -f /opt/repo/variables.conf /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/config/variables.conf;
+cp -f /opt/repo/variablesparser.sh /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/variablesparser.sh;
