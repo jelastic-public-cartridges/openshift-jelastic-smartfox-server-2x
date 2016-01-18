@@ -2,7 +2,7 @@ Name: smartFoxServer
 Cartridge-Short-Name: SFS
 Display-Name: SFS
 Description: "SmartFoxServer."
-Version: '2X'
+Version: '2.x'
 License: GNU GENERAL PUBLIC LICENSE
 License-Url: 
 Vendor: SmartFoxServer
