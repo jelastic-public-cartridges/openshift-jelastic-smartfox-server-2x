@@ -2,17 +2,19 @@
 
 # Download and execute script to install SmartFoxServer 2X
 cd /tmp;
-wget http://www.smartfoxserver.com/downloads/sfs2x/scripts/jelastic/SFS2X_installer.sh;
+#wget http://www.smartfoxserver.com/downloads/sfs2x/scripts/jelastic/SFS2X_installer.sh;
+wget http://smartfoxserver.com/downloads/sfs2x/scripts/jelastic/SFS2X_installer.py;
 
 ##################    Jelastic patch   ##################
-[ ! -f "/tmp/SFS2X_installer.sh"  ] && exit 1;
-sed -i '/apt-get/d' /tmp/SFS2X_installer.sh;
-sed -i '/S99sfs2X/d' /tmp/SFS2X_installer.sh;
-sed -i '/SFS2X_IP_configuration.py/d' /tmp/SFS2X_installer.sh;
+[ ! -f "/tmp/SFS2X_installer.py"  ] && exit 1;
+#sed -i '/apt-get/d' /tmp/SFS2X_installer.sh;
+#sed -i '/S99sfs2X/d' /tmp/SFS2X_installer.sh;
+#sed -i '/SFS2X_IP_configuration.py/d' /tmp/SFS2X_installer.sh;
 #sed -i 's/\/opt\/SmartFoxServer_2X\/SFS2X/\/opt\/repo\/versions\/multiverse\/SmartFoxServer_2X\/SFS2X/g' /tmp/SFS2X_installer.sh;
 #########################################################
 
-sh SFS2X_installer.sh | tee /tmp/SFS2X_installation.log;
+#sh SFS2X_installer.sh | tee /tmp/SFS2X_installation.log;
+python SFS2X_installer.py | tee /tmp/SFS2X_installation.log;
 
 ##################    Jelastic patch   ##################
 [ -d "/opt/SmartFoxServer_2X" ] && mv /opt/SmartFoxServer_2X /opt/repo/versions/2X
