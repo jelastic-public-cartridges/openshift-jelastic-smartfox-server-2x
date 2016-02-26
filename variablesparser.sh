@@ -1,5 +1,5 @@
 #!/bin/bash
-CONFFILE='/opt/repo/versions/2.x/SmartFoxServer_2X/SFS2X/config/variables.conf'
+CONFFILE='/opt/repo/versions/2x/SmartFoxServer_2X/SFS2X/config/variables.conf'
 JELASTIC_GC_AGENT="jelastic-gc-agent.jar"
 
 SED=`which sed`
