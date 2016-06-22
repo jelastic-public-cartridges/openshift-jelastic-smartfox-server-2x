@@ -394,13 +394,7 @@ case "$1" in
                 . /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/variablesparser.sh
         fi
 
-[ -z "$XMS" ] && { XMS=32M; }
-[ -z "$XMN" ] && { XMN=30M; }
-[ -z "$GC" ] && { GC="-XX:+UseParNewGC"; }
-memory_total=`free -m | grep Mem | awk '{print $2}'`;
-[ -z "$XMX" ] && { let XMX=memory_total-35; XMX="${XMX}M"; }
-
-$INSTALL4J_JAVA_PREFIX nohup "$app_java_home/bin/java" -Xms${XMS} -Xmn${XMN} -Xmx${XMX} ${GC} ${confresult} -server -Dinstall4j.jvmDir="$app_java_home" -Dexe4j.moduleName="$prg_dir/$progname" "-Dfile.encoding=UTF-8" "-Dinstall4j.launcherId=23" "-Dinstall4j.swt=false" "$vmov_1" "$vmov_2" "$vmov_3" "$vmov_4" "$vmov_5" $INSTALL4J_ADD_VM_PARAMS -classpath "$local_classpath" com.install4j.runtime.launcher.Launcher start com.smartfoxserver.v2.Main false false "" "" true true false "sfs-splash.png" true true 0 0 "" 20 20 "Arial" "0,0,0" 8 500 "version 2.9.0" 20 40 "Arial" "0,0,0" 8 500 -1  > /dev/null 2>&1 &
+$INSTALL4J_JAVA_PREFIX nohup "$app_java_home/bin/java" ${JAVA_OPTS} -server -Dinstall4j.jvmDir="$app_java_home" -Dexe4j.moduleName="$prg_dir/$progname" "-Dfile.encoding=UTF-8" "-Dinstall4j.launcherId=23" "-Dinstall4j.swt=false" "$vmov_1" "$vmov_2" "$vmov_3" "$vmov_4" "$vmov_5" $INSTALL4J_ADD_VM_PARAMS -classpath "$local_classpath" com.install4j.runtime.launcher.Launcher start com.smartfoxserver.v2.Main false false "" "" true true false "sfs-splash.png" true true 0 0 "" 20 20 "Arial" "0,0,0" 8 500 "version 2.9.0" 20 40 "Arial" "0,0,0" 8 500 -1  > /dev/null 2>&1 &
 
 
     ;;
@@ -443,3 +437,4 @@ $INSTALL4J_JAVA_PREFIX "$app_java_home/bin/java" -server -Dinstall4j.jvmDir="$ap
 esac
 
 exit $?
+
