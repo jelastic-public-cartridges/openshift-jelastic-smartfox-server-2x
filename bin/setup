@@ -14,10 +14,12 @@ wget http://smartfoxserver.com/downloads/sfs2x/scripts/jelastic/SFS2X_installer.
 #########################################################
 
 #sh SFS2X_installer.sh | tee /tmp/SFS2X_installation.log;
+sed -i -re '/^sfsMainPackageName/s/\s\+ \"_64\"//' SFS2X_installer.py
 python SFS2X_installer.py | tee /tmp/SFS2X_installation.log;
 
 ##################    Jelastic patch   ##################
-[ -d "/opt/SmartFoxServer_2X" ] && mv /opt/SmartFoxServer_2X /opt/repo/versions/2X
+mkdir -p /opt/repo/versions/2X/
+[ -d "/opt/SmartFoxServer_2X" ] && mv /opt/SmartFoxServer_2X /opt/repo/versions/2X/
 sed "s/127.0.0.1/<%= ENV['OPENSHIFT_SFS_IP'] %>/g"  /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/config/server.xml > /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/config/server.xml.erb
 sed -i 's/<adminTcpPort>[0-9]*<\/adminTcpPort>/<adminTcpPort>-1<\/adminTcpPort>/g' /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/config/server.xml.erb
 erb  /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/config/server.xml.erb > /opt/repo/versions/2X/SmartFoxServer_2X/SFS2X/config/server.xml
