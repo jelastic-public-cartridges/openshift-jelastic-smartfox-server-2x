@@ -352,9 +352,9 @@ for i in `ls "$app_home/SFS2X/extensions/__lib__" 2> /dev/null | egrep "\.(jar$|
 do
   add_class_path "$app_home/SFS2X/extensions/__lib__/$i"
 done
-for i in `ls "$app_home/SFS2X/lib/jetty/lib" 2> /dev/null | egrep "\.(jar$|zip$)"`
+for i in `ls "$app_home/SFS2X/lib/apache-tomcat/bin" 2> /dev/null | egrep "\.(jar$|zip$)"`
 do
-  add_class_path "$app_home/SFS2X/lib/jetty/lib/$i"
+  add_class_path "$app_home/SFS2X/lib/apache-tomcat/bin/$i"
 done
 add_class_path "$app_home/SFS2X"
 
